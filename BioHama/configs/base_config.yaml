@@ -1,0 +1,133 @@
+# BioHama 기본 설정 파일
+# 바이오-인스파이어드 하이브리드 적응형 메타 아키텍처
+
+# 시스템 기본 설정
+system:
+  name: "BioHama"
+  version: "0.1.0"
+  device: "auto"  # cpu, cuda, auto
+  log_level: "INFO"
+  seed: 42
+
+# 메타 라우터 설정
+meta_router:
+  name: "MetaRouter"
+  input_dim: 128
+  hidden_dim: 256
+  num_layers: 3
+  num_heads: 8
+  dropout: 0.1
+  routing_temperature: 1.0
+  exploration_rate: 0.1
+  confidence_threshold: 0.7
+  max_history_length: 1000
+
+# 인지 상태 관리 설정
+cognitive_state:
+  name: "CognitiveState"
+  working_memory_dim: 256
+  attention_dim: 128
+  emotion_dim: 64
+  metacognitive_dim: 128
+  max_history_length: 1000
+  state_update_rate: 0.8
+  emotion_decay_rate: 0.95
+
+# 작업 메모리 설정
+working_memory:
+  name: "WorkingMemory"
+  capacity: 256
+  chunk_size: 64
+  decay_rate: 0.1
+  consolidation_threshold: 0.7
+  max_items: 100
+  cleanup_interval: 100
+
+# 의사결정 엔진 설정
+decision_engine:
+  name: "DecisionEngine"
+  decision_dim: 256
+  num_options: 10
+  exploration_rate: 0.1
+  confidence_threshold: 0.6
+  max_decision_history: 500
+
+# 주의 제어 설정
+attention_control:
+  name: "AttentionControl"
+  attention_dim: 128
+  num_heads: 8
+  dropout: 0.1
+  focus_decay_rate: 0.9
+  salience_threshold: 0.5
+
+# 메시지 전달 시스템 설정
+message_passing:
+  name: "MessagePassing"
+  message_dim: 128
+  max_message_length: 1000
+  message_ttl: 10
+  input_dim: 128
+  output_dim: 128
+  routing_table_size: 100
+  message_queue_size: 500
+
+# Bio-A-GRPO 학습 알고리즘 설정
+bio_agrpo:
+  name: "BioAGRPO"
+  learning_rate: 3e-4
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_ratio: 0.2
+  value_loss_coef: 0.5
+  entropy_coef: 0.01
+  
+  # 신경전달물질 설정
+  dopamine_decay: 0.95
+  serotonin_modulation: 0.1
+  norepinephrine_boost: 0.2
+  
+  # 경험 리플레이 설정
+  replay_buffer_size: 10000
+  batch_size: 64
+  state_dim: 128
+  action_dim: 64
+  
+  # 훈련 설정
+  update_frequency: 10
+  target_update_frequency: 100
+  gradient_clip_norm: 0.5
+
+# 성능 모니터링 설정
+monitoring:
+  enabled: true
+  metrics_interval: 100
+  log_interval: 50
+  checkpoint_interval: 1000
+  
+  # 시각화 설정
+  tensorboard_enabled: true
+  wandb_enabled: false
+  plot_interval: 200
+
+# 메모리 관리 설정
+memory_management:
+  max_memory_usage: 0.8  # 최대 메모리 사용률
+  cleanup_threshold: 0.7
+  garbage_collection_interval: 100
+  
+# 디버깅 설정
+debug:
+  enabled: false
+  verbose: false
+  profile_performance: false
+  log_detailed_stats: false
+
+# 확장 설정
+extensions:
+  # 선택적 모듈들
+  nlp_processing: false
+  computer_vision: false
+  audio_processing: false
+  reinforcement_learning: true
+
